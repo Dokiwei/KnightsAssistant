@@ -1,0 +1,17 @@
+apply from: '../app.gradle'
+
+android {
+    resourcePrefix 'library_'
+    namespace 'com.dokiwei.knight.library'
+    defaultConfig {
+        if (!isRelease) {
+            applicationId "com.dokiwei.knight.library"
+            versionCode 1
+            versionName "1.0"
+        }
+    }
+}
+
+dependencies {
+
+}

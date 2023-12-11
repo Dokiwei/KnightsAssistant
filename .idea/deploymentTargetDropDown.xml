@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="deploymentTargetDropDown">
+    <value>
+      <entry key="app">
+        <State />
+      </entry>
+      <entry key="app-calculate">
+        <State />
+      </entry>
+      <entry key="app-common">
+        <State />
+      </entry>
+      <entry key="app-library">
+        <State />
+      </entry>
+      <entry key="app-setting">
+        <State />
+      </entry>
+    </value>
+  </component>
+</project>

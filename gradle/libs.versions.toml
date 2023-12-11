@@ -1,0 +1,72 @@
+[versions]
+agp = "8.3.0-alpha01"
+kotlin = "1.9.10"
+core-ktx = "1.12.0"
+junit = "4.13.2"
+androidx-test-ext-junit = "1.1.5"
+espresso-core = "3.5.1"
+appcompat = "1.6.1"
+material = "1.9.0"
+constraintlayout = "2.1.4"
+arouter = "1.5.2"
+ksp = "1.9.10-1.0.13"
+paging-version = "3.2.1"
+room_version = "2.5.2"
+hilt = "2.48"
+refresh = "1.1.0"
+glide = "5.0.0-rc01"
+leakcanary = "2.12"
+logger = "2.2.0"
+
+[libraries]
+#   logger
+logger = { group = "com.orhanobut", name = "logger", version.ref = "logger" }
+
+#   leakcanary
+leakcanary-android = { group = "com.squareup.leakcanary", name = "leakcanary-android", version.ref = "leakcanary" }
+
+#   hilt
+hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+
+#   ARouter
+arouter-api = { module = "com.alibaba:arouter-api", version.ref = "arouter" }
+com-alibaba-arouter-compiler3 = { module = "com.alibaba:arouter-compiler", version.ref = "arouter" }
+
+#   Room
+room-core = { module = "androidx.room:room-runtime", version.ref = "room_version" }
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "room_version" }
+room-ktx = { module = "androidx.room:room-ktx", version.ref = "room_version" }
+room-paging = { module = "androidx.room:room-paging", version.ref = "room_version" }
+
+#   paging
+paging3 = { module = "androidx.paging:paging-runtime", version.ref = "paging-version" }
+
+#   glide
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+glide-compiler = { group = "com.github.bumptech.glide", name = "ksp", version.ref = "glide" }
+
+#   refresh
+refresh = { group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version.ref = "refresh" }
+
+#   Androidx
+core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+
+#   Material
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+
+#   test
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }

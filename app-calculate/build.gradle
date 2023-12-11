@@ -1,0 +1,17 @@
+apply from: '../app.gradle'
+
+android {
+    resourcePrefix 'calculate_'
+    namespace 'com.dokiwei.knight.calculate'
+    defaultConfig {
+        if (!isRelease) {
+            applicationId "com.dokiwei.knight.calculate"
+            versionCode 1
+            versionName "1.0"
+        }
+    }
+}
+
+dependencies {
+
+}

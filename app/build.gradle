@@ -1,0 +1,94 @@
+plugins {
+    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.kapt)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt)
+}
+
+kapt {
+    correctErrorTypes = true
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
+android {
+    namespace 'com.dokiwei.knight.assistant'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.dokiwei.knight.assistant"
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    viewBinding { enable = true }
+    dataBinding { enable = true }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+dependencies {
+
+    //  logger
+    implementation(libs.logger)
+
+    //  room
+    implementation(libs.room.core)
+    implementation(libs.room.paging)
+    implementation(libs.room.ktx)
+    ksp(libs.room.compiler)
+
+    //  refresh
+    implementation(libs.refresh)
+
+    //  paging3
+    implementation(libs.paging3)
+
+    //glide
+    implementation(libs.glide)
+    ksp(libs.glide.compiler)
+
+    //  hilt
+    implementation(libs.hilt)
+    ksp(libs.hilt.compiler)
+
+    //  ARouter
+    implementation(libs.arouter.api)
+    kapt(libs.com.alibaba.arouter.compiler3)
+
+    implementation(libs.core.ktx)
+    implementation(libs.appcompat)
+    implementation(libs.material)
+    implementation(libs.constraintlayout)
+
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.espresso.core)
+    debugImplementation(libs.leakcanary.android)
+
+    //model
+    if (isRelease) {
+        implementation(project(":app-calculate"))
+        implementation(project(":app-library"))
+        implementation(project(":app-setting"))
+    }
+    implementation(project(":lib-common"))
+}
+
+
